@@ -1,4 +1,18 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# next-tabs
+
+Showcasing persistent routes in Next.js App Router.
+
+### Problem
+
+When a user navigates to any route, it is rendered from scratch on the server and client state is reset.
+
+However, sometimes you want to maintain state of already loaded pages even when you navigate away and back.
+
+This is useful for providing app-like experiences and preventing unnecessary work on the client.
+
+### Solution
+
+Using Next.js [Parallel Routes](https://nextjs.org/docs/app/building-your-application/routing/parallel-routes), and some CSS conditional display we can achieve persistent routes for already visited pages.
 
 ## Getting Started
 
@@ -14,11 +28,26 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Notice counter starts counting
+3. Click back and forth through different tabs and notice the counter does not reset and pages do not re-render.
+4. Refresh page and notice the counter resets.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How it works?
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. First add our tabs as regular routes.
+2. Then, place each rout into a slot using the `@slot` naming convention.
+3. Add an empty `default.tsx` for each slot.
+4. Add a `not-found.tsx` for each tab route (as a precaution against current known issue).
+5. Add a `layout.tsx` file to the parent folder of the tabs. This will be the layout that controls the display of the tabs.
+6. Grab all tabs from the layout's props, and render them.
+7. To show one tab at a time use CSS `display` property to hide/show each tab slot depending on the current `pathname`. A basic `Route` component has been defined to help with this.
+
+## Known Issues
+
+1. For some reason, loading `/tab-a/sub-a` on hard-refresh (or with Javascript disabled), results in a NOT_FOUND error.
+
+   > Hack: To correctly render the page, add a `not-found.tsx` file (with non-empty return) to its parent route, `/tab-a`.
 
 ## Learn More
 
