@@ -33,6 +33,8 @@ bun dev
 3. Click back and forth through different tabs and notice the counter does not reset and pages do not re-render.
 4. Refresh page and notice the counter resets.
 
+> NB: To compare the behavior without persistent tabs, checkout to `without-slots` branch (`git checkout without-slots`).
+
 ## How it works?
 
 1. First add our tabs as regular routes.
