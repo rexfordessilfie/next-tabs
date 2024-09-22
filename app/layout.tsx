@@ -46,9 +46,7 @@ export default function RootLayout({
 
             <div className="p-2 border dark:border-gray-500 rounded-md flex flex-col gap-2">
               <Counter label="Layout" />
-              <Route path="/" component={children} />
-              <Route path="/tab-a" component={tab_a} />
-              <Route path="/tab-b" component={tab_b} />
+              {children}
             </div>
           </div>
 

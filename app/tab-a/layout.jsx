@@ -15,8 +15,7 @@ export default function Layout({ children, sub_a }) {
       <div className="border rounded-md p-2 flex flex-col gap-2 dark:border-gray-500">
         <Counter label="Layout" />
 
-        <Route path="/tab-a" exact component={children} />
-        <Route path="/tab-a/sub-a" component={sub_a} />
+        {children}
       </div>
     </div>
   );
