@@ -40,7 +40,7 @@ bun dev
 1. First add our tabs as regular routes.
 2. Then, place each rout into a slot using the `@slot` naming convention.
 3. Add an empty `default.tsx` for each slot.
-4. Add a `not-found.tsx` for each tab route (as a precaution against current known issue).
+4. Add a `not-found.tsx` for each tab route and root (as a precaution against current known issue).
 5. Add a `layout.tsx` file to the parent folder of the tabs. This will be the layout that controls the display of the tabs.
 6. Grab all tabs from the layout's props, and render them.
 7. To show one tab at a time use CSS `display` property to hide/show each tab slot depending on the current `pathname`. A basic `Route` component has been defined to help with this.
@@ -50,6 +50,8 @@ bun dev
 1. For some reason, loading `/tab-a/sub-a` on hard-refresh (or with Javascript disabled), results in a NOT_FOUND error.
 
    > Hack: To correctly render the page, add a `not-found.tsx` file (with non-empty return) to its parent route, `/tab-a`.
+
+2. Also in development mode, without `not-found.tsx` in the root of the tabs, slots are no longer rendered on save/hot-reload inside of the root page.
 
 ## Learn More
 

@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Route } from "./components/Route";
 import { NavLink } from "./components/NavLink";
+import { Counter } from "./components/Counter";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -32,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased p-4`}
       >
         <div className="w-fit gap-4 text-center flex mx-auto py-2">
           <NavLink href="/">Home</NavLink>
@@ -40,9 +41,12 @@ export default function RootLayout({
           <NavLink href="/tab-b">Tab B</NavLink>
         </div>
 
-        <Route path="/" component={children} />
-        <Route path="/tab-a" component={tab_a} />
-        <Route path="/tab-b" component={tab_b} />
+        <Counter />
+        <div className="p-4 border rounded-md mt-2">
+          <Route path="/" component={children} />
+          <Route path="/tab-a" component={tab_a} />
+          <Route path="/tab-b" component={tab_b} />
+        </div>
       </body>
     </html>
   );
