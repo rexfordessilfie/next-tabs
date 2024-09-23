@@ -4,6 +4,7 @@ import "./globals.css";
 import { Route } from "./components/Route";
 import { NavLink } from "./components/NavLink";
 import { Counter } from "./components/Counter";
+import Link from "next/link";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -97,6 +98,11 @@ export default function RootLayout({
                 forward buttons
               </li>
             </ol>
+          </div>
+          <div className="w-full text-center mt-8">
+            <Link href="https://github.com/rexfordessilfie/next-tabs">
+              github ↗
+            </Link>
           </div>
         </div>
       </body>
