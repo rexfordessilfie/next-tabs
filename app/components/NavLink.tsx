@@ -14,10 +14,9 @@ export function NavLink({ exact, ...props }: Props) {
   return (
     <Link
       {...props}
-      style={{
-        ...(isActive ? { fontWeight: "bold" } : {}),
-        ...props.style,
-      }}
+      className={`${
+        isActive ? "dark:bg-gray-800 bg-gray-200 font-semibold" : ""
+      } p-0.5 px-2 text-sm font-semibold hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md`}
     />
   );
 }
