@@ -75,7 +75,7 @@ export default function RootLayout({
 
               <li>
                 This demo showcases how to maintain state across different
-                routes using a layout component
+                routes using parallel routes.
               </li>
             </ul>
 
