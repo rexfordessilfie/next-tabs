@@ -93,7 +93,7 @@ export default function RootLayout({
                 increment even as you switch tabs
               </li>
               <li>
-                This also works with switching tabs via the browser's back and
+                This also works with switching tabs via the browser back and
                 forward buttons
               </li>
             </ol>
