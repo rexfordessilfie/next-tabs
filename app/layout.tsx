@@ -42,11 +42,13 @@ export default function RootLayout({
               <NavLink href="/">Home</NavLink>
               <NavLink href="/tab-a">Tab A</NavLink>
               <NavLink href="/tab-b">Tab B</NavLink>
+              <NavLink href="/tab-c">Tab C (children)</NavLink>
             </div>
 
             <div className="p-2 border dark:border-gray-500 rounded-md flex flex-col gap-2">
               <Counter label="Layout" />
               <Route path="/" component={children} />
+              <Route path="/tab-c" component={children} />
               <Route path="/tab-a" component={tab_a} />
               <Route path="/tab-b" component={tab_b} />
             </div>
@@ -98,6 +100,13 @@ export default function RootLayout({
                 forward buttons
               </li>
             </ol>
+
+            <p>
+              You will notice that Home and Tab C reset each other as you click
+              back and forth between them. This is because they share the same
+              slot, <code>children</code>.<br></br>To truly have full tab-like
+              behavior, each tab should have its own unique slot.
+            </p>
           </div>
           <div className="w-full text-center mt-8">
             <Link href="https://github.com/rexfordessilfie/next-tabs">
