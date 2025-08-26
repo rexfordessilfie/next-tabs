@@ -95,7 +95,7 @@ export const useCounter = (id: string) => {
 };
 
 export function Counter2({ label, id }: { label?: string; id: string }) {
-  const { value, start, stop } = useCounter(id);
+  const { value } = useCounter(id);
 
   return (
     <p className="text-[0.95rem]">
