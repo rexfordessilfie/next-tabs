@@ -1,6 +1,4 @@
-import { Counter } from "@/app/components/Counter";
-import { NavLink } from "@/app/components/NavLink";
-import { Route } from "@/app/components/Route";
+import { Counter, NavLink, Route } from "@/app/components";
 
 export default function Layout({ children, sub_a }) {
   return (

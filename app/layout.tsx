@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Route } from "./components/Route";
-import { NavLink } from "./components/NavLink";
-import { Counter } from "./components/Counter";
+import { Counter, NavLink, Route } from "./components";
 import Link from "next/link";
 
 const geistSans = localFont({
@@ -45,7 +43,10 @@ export default function RootLayout({
               <NavLink href="/tab-c">Tab C (children)</NavLink>
             </div>
 
-            <div className="p-2 border dark:border-gray-500 rounded-md flex flex-col gap-2">
+            <div
+              key={1}
+              className="p-2 border dark:border-gray-500 rounded-md flex flex-col gap-2"
+            >
               <Counter label="Layout" />
               <Route path="/" component={children} />
               <Route path="/tab-c" component={children} />

@@ -1,4 +1,4 @@
-import { Counter } from "@/app/components/Counter";
+import { Counter } from "@/app/components";
 
 export default function SubA() {
   return (
