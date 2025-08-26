@@ -5,6 +5,7 @@ export default function Home() {
     <div className="border bg-yellow-500 dark:bg-yellow-600 rounded-md p-2 dark:border-gray-500 gap-2 flex flex-col">
       <h1 className="font-semibold">Home</h1>
       <Counter label="Page" />
+      {/* <Counter2 label="Page" id="home-page" /> */}
     </div>
   );
 }

@@ -5,6 +5,7 @@ export default function SubA() {
     <div className="border bg-purple-500 dark:bg-purple-600 p-2 rounded-md flex flex-col gap-2 dark:border-gray-500">
       <h1 className="font-semibold">Sub A</h1>
       <Counter label="Page" />
+      {/* <Counter2 label="Page" id="sub-a-page" /> */}
     </div>
   );
 }

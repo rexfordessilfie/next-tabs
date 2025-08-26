@@ -5,6 +5,7 @@ export default function TabB() {
     <div className="border bg-red-500 dark:bg-red-600 p-2 rounded-md flex flex-col gap-2 dark:border-gray-500">
       <h1 className="font-semibold">Tab B</h1>
       <Counter label="Page" />
+      {/* <Counter2 label="Page" id="tab-b-page" /> */}
     </div>
   );
 }
